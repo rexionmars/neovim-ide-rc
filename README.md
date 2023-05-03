@@ -77,4 +77,4 @@ $ after init.lua lua plugins
 ```
 
 ## Instalition guide
-https://github.com/len4rdi/nvim-rc/wiki/Main
+Wiki in construction
