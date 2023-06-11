@@ -1,11 +1,6 @@
 ## Nvim with suport LSP
 <!--<img src="images/main_3.jpg" alt="Main screen theme 4" height="520">-->
-<img src="images/swappy-20230507_004226.png" alt="Main screen theme 4">
-<img src="images/swappy-20230507_004207.png" alt="Main screen theme 4"">
-<img src="images/swappy-20230507_004149.png" alt="Main screen theme 4"">
-<img src="images/i3_screenshot_2023-04-16-21-29-57.png" alt="Main screen theme 4"">
-<img src="images/swappy-20230507_002522.png" alt="Main screen theme 4"">
-<img src="images/i3_screenshot_2023-04-16-22-13-13.png" alt="Main screen theme 4"">
+<img src="images/swappy-20230507_152258.png" alt="Main screen theme 4">
 
 ## Plugins Used ⚙️
 🟡 **LSP Saga** -- LSP Saga UIs<br>
