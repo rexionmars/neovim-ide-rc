@@ -3,8 +3,14 @@ require('highlights')
 require('maps')
 require('plugins')
 
-vim.cmd('color ofirkai')
+-- Hidden Status Line
+vim.cmd('set laststatus=0')
+
+-- Themes
+vim.cmd('color fluoromachine')
+
 vim.cmd('set nocursorline')
+vim.cmd('set nocursorcolumn')
 vim.cmd('set t_Co=256')
-vim.cmd('set colorcolumn=80')
-vim.cmd('highlight CursorColumn guibg=#404040')
+--vim.cmd('set colorcolumn=100')
+vim.cmd('set termguicolors')

@@ -1,7 +1,7 @@
 local status, packer = pcall(require, 'packer')
 if (not status) then
-  print("Packer is not installed")
-  return
+    print("Packer is not installed")
+    return
 end
 
 -- LOAD PACKER MANAGER
@@ -21,19 +21,26 @@ packer.startup(function(use)
   use 'akinsho/nvim-bufferline.lua'             -- Bufferline
   use 'glepnir/lspsaga.nvim'                    -- LSP Saga UIs
   use 'lukas-reineke/indent-blankline.nvim'     -- Indentline
-  use 'ofirgall/ofirkai.nvim'                   -- Theme
-  use 'n1ghtmare/noirblaze-vim'                 -- Pink theme
   use 'nvim-tree/nvim-tree.lua'                 -- File explorer Nerd tree alternative
-  use 'rcarriga/nvim-notify'
-  use 'lewis6991/gitsigns.nvim'
+  use 'rcarriga/nvim-notify'                    -- Neovim Notifications
+  use 'lewis6991/gitsigns.nvim'                 -- Git view in bar
   use 'lewis6991/satellite.nvim'                -- Custom scrollbar for neovim
-  use 'voldikss/vim-floaterm'
-  use 'tomasr/molokai'
-  use 'abnt713/vim-hashpunk'
-  use 'williamboman/mason.nvim'
+  use 'voldikss/vim-floaterm'                   -- Float terminal
+  use 'williamboman/mason.nvim'                 -- Plugin manager
   use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'mfussenegger/nvim-dap'
+  use 'rbong/vim-flog'                          -- GIT commit visualizer
+  use 'tpope/vim-fugitive'
+  use 'nvim-lua/lsp-status.nvim'
+  use 'wakatime/vim-wakatime'                   -- wakatime
+  use 'norcalli/nvim-colorizer.lua'             -- Colorizer
+  use 'maxmx03/fluoromachine.nvim'              -- Night theme
+  use 'm-demare/hlargs.nvim'
+  use 'kevinhwang91/rnvimr'
+  use 'ray-x/starry.nvim'
+  use 'Exafunction/codeium.vim'
+  use 'xiyaowong/transparent.nvim'
 
   -- TELESCOPE CONFIGURATION
   use 'nvim-telescope/telescope.nvim'
@@ -42,25 +49,43 @@ packer.startup(function(use)
 
   -- PLUGIN'S WITH CONFIGURATION
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
   }
 
+  -- Smooth cursor
   use { 'gen740/SmoothCursor.nvim',
-  config = function()
-    require('smoothcursor').setup()
-    end
+      config = function()
+          require('smoothcursor').setup()
+      end
+  }
+
+  -- Trouble report error
+  use { "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+          require("trouble").setup {}
+      end
+  }
+
+  -- aerial Snippet
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
+
+  -- Biscuits
+  use {
+  'code-biscuits/nvim-biscuits',
+  requires = {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+    },
   }
   
-  -- Lua
-  use { "folke/trouble.nvim",
-  requires = "nvim-tree/nvim-web-devicons",
-  config = function()
-    require("trouble").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end
+  -- Solarized
+  use {
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' },
   }
-end)
+end)-- End main
